@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soal No 5</title>
+  </head>
+  <body>
+    <h1>Pilih Jenis Hewan</h1>
+
+    <!-- Pilihan jenis hewan -->
+    <select id="jenisHewan" onchange="tampilkanGambar()">
+      <option value="domba">Domba</option>
+      <option value="kucing">Kucing</option>
+      <option value="kelinci">Kelinci</option>
+      <option value="singa">Singa</option>
+    </select>
+
+    <!-- Elemen untuk menampilkan gambar hewan -->
+    <div id="gambarHewan"></div>
+
+    <!-- Skrip JavaScript -->
+    <script>
+      // Fungsi untuk menampilkan gambar hewan sesuai pilihan
+      function tampilkanGambar() {
+        var selectElement = document.getElementById("jenisHewan");
+        var selectedValue = selectElement.value;
+        var gambarElement = document.getElementById("gambarHewan");
+
+        switch (selectedValue) {
+          case "domba":
+            gambarElement.innerHTML = '<img src="img/domba.jpg" alt="Gambar Domba">';
+            break;
+          case "kucing":
+            gambarElement.innerHTML = '<img src="img/kucing.jpg" alt="Gambar Kucing">';
+            break;
+          case "kelinci":
+            gambarElement.innerHTML = '<img src="img/kelinci.jpg" alt="Gambar Kelinci">';
+            break;
+          case "singa":
+            gambarElement.innerHTML = '<img src="img/singa.jpg" alt="Gambar Singa">';
+            break;
+          default:
+            gambarElement.innerHTML = "";
+        }
+      }
+    </script>
+  </body>
+</html>

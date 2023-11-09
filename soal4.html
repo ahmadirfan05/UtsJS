@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soal No 4</title>
+  </head>
+  <body>
+    <h1>Selamat Datang di Hotel Paok Dandak</h1>
+
+    <!-- Skrip JavaScript -->
+    <script>
+      // Definisi kelas Hotel
+      class Hotel {
+        constructor(nama, alamat, jumlahKamar, fasilitas, klasifikasi) {
+          this.nama = nama;
+          this.alamat = alamat;
+          this.jumlahKamar = jumlahKamar;
+          this.fasilitas = fasilitas;
+          this.klasifikasi = klasifikasi;
+          this.bookingStatus = false;
+        }
+
+        // Fungsi untuk melakukan booking hotel
+        book() {
+          if (!this.bookingStatus) {
+            this.bookingStatus = true;
+            console.log(`Selamat! Anda telah berhasil membooking ${this.nama}.`);
+            this.displayInfo();
+          } else {
+            console.log(`Maaf, ${this.nama} sudah fully booked.`);
+          }
+        }
+
+        // Fungsi untuk melakukan pembatalan booking
+        canbook() {
+          if (this.bookingStatus) {
+            this.bookingStatus = false;
+            console.log(`Booking ${this.nama} berhasil dibatalkan.`);
+          } else {
+            console.log(`Anda belum melakukan booking di  ${this.nama}.`);
+          }
+        }
+
+        // Fungsi untuk menampilkan informasi hotel
+        displayInfo() {
+          console.log(`
+          Informasi Hotel:
+          Nama: ${this.nama}
+          Alamat: ${this.alamat}
+          Jumlah Kamar: ${this.jumlahKamar}
+          Fasilitas: ${this.fasilitas}
+          Klasifikasi: ${this.klasifikasi}
+        `);
+        }
+      }
+
+      // Membuat objek Hotel
+      var hotel = new Hotel("Hotel Paok Dandak", "Jl.Paok Dandal No.12", "25 Kamar", "WiFi, Kolam Renang,Cewek", "Bintang 4");
+    </script>
+  </body>
+</html>
